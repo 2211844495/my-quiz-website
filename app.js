@@ -156,7 +156,7 @@ function selectAnswer(e) {
 function showScore() {
     resetState();
     questionElement.innerHTML = `You answered ${score} questions out of ${questions.length}! 
-    <br> if you wanna play again, they are the same questions!`;
+    <br> <br> if you wanna play again, they are the same questions!`;
     happyMessage.style.display = "flex";
     nextButton.innerHTML = "Play Again!";
     nextButton.style.display = "block";
