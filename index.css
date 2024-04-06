@@ -114,3 +114,35 @@ body {
 .incorrect {
   background: #cb434386;
 }
+
+
+
+@media only screen and (max-width: 767px) {
+    
+    #startBtn {
+        background: #c45757;
+      color: #ffffffd4;
+      font-size: 20px;
+      font-weight: 500;
+      width: 50%;
+      border: 1px solid #222;
+      padding: 10px;
+      margin: 10px 0;
+      text-align: center;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+      align-self: center;
+    }
+    .app {
+        padding: 20px;
+    }
+    .happy {
+        margin-left: 10px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        height: 200px;
+    }
+}
