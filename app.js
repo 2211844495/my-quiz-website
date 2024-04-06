@@ -35,8 +35,66 @@ const questions = [
       { text: "2010", correct: false },
     ],
   },
+  {
+    question: "In what decade was the Internet created?",
+    answers: [
+      { text: "1960s", correct: true },
+      { text: "1970s", correct: false },
+      { text: "1950s", correct: false },
+      { text: "1940s", correct: false },
+    ],
+  },
+  {
+    question: "Who directed the movie Titanic?",
+    answers: [
+      { text: "Steven Spielberg", correct: false },
+      { text: "Alfred Hitchcock", correct: false },
+      { text: "James Cameron", correct: true },
+      { text: "Tim Burton", correct: false },
+    ],
+  },
+  {
+    question: "What year did Word War II end?",
+    answers: [
+      { text: "1941", correct: false },
+      { text: "1948", correct: false },
+      { text: "1950", correct: false },
+      { text: "1945", correct: true },
+    ],
+  },
+  {
+    question: "Which planet has the most moons?",
+    answers: [
+      { text: "Mars", correct: false },
+      { text: "Jupiter", correct: true },
+      { text: "Venus", correct: false },
+      { text: "Saturn", correct: false },
+    ],
+  },
+  {
+    question: "What chemical element has the symbol Na?",
+    answers: [
+      { text: "Sodium", correct: true },
+      { text: "Nitrogen", correct: false },
+      { text: "Argon", correct: false },
+      { text: "Neon", correct: false },
+    ],
+  },
+  {
+    question: "Who won the Best Actor Oscar in 2023?",
+    answers: [
+      { text: "Leonardo DiCaprio", correct: false },
+      { text: "Brad Pitt", correct: false },
+      { text: "Brandon Fraser", correct: true },
+      { text: "Matthew McConaughy", correct: false },
+    ],
+  },
 ];
 
+const happyMessage = document.getElementById("happy");
+const startList = document.getElementById("start");
+const startButton = document.getElementById("startBtn");
+const questionList = document.getElementById("quiz");
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
@@ -47,6 +105,8 @@ let score = 0;
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
+  questionList.style.display = "block";
+  startList.style.display = "none";
   nextButton.innerHTML = "Next";
   showQuestion();
 }
@@ -95,7 +155,9 @@ function selectAnswer(e) {
 
 function showScore() {
     resetState();
-    questionElement.innerHTML = `You answered ${score} questions out of ${questions.length}!`;
+    questionElement.innerHTML = `You answered ${score} questions out of ${questions.length}! 
+    <br> if you wanna play again, they are the same questions!`;
+    happyMessage.style.display = "flex";
     nextButton.innerHTML = "Play Again!";
     nextButton.style.display = "block";
 }
@@ -118,4 +180,6 @@ nextButton.addEventListener("click", () => {
 });
 
 
-startQuiz();
+
+startButton.addEventListener("click", startQuiz);
+
